@@ -832,7 +832,7 @@ class AppTextField extends StatefulWidget {
       );
 
   /// Full custom control — override fill, border, focus, text, label colors
-  /// plus borderRadius, size, and contentPadding.
+  /// plus borderRadius, size, contentPadding, prefix, suffix, readonly, maxLength.
   factory AppTextField.custom({
     Key? key,
     TextEditingController? controller,
@@ -848,10 +848,18 @@ class AppTextField extends StatefulWidget {
     EdgeInsetsGeometry? contentPadding,
     Widget? prefixIcon,
     Widget? suffixIcon,
+    Widget? prefix,
+    Widget? suffix,
     ValueChanged<String>? onChanged,
+    ValueChanged<String>? onSubmitted,
     FormFieldValidator<String>? validator,
     bool enabled = true,
+    bool readOnly = false,
+    int? maxLength,
     TextInputType? keyboardType,
+    TextInputAction? textInputAction,
+    List<TextInputFormatter>? inputFormatters,
+    bool autofocus = false,
   }) =>
       AppTextField(
         key: key,
@@ -868,10 +876,18 @@ class AppTextField extends StatefulWidget {
         contentPadding: contentPadding,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
+        prefix: prefix,
+        suffix: suffix,
         onChanged: onChanged,
+        onSubmitted: onSubmitted,
         validator: validator,
         enabled: enabled,
+        readOnly: readOnly,
+        maxLength: maxLength,
         keyboardType: keyboardType,
+        textInputAction: textInputAction,
+        inputFormatters: inputFormatters,
+        autofocus: autofocus,
       );
 
   @override
@@ -940,6 +956,7 @@ class _AppTextFieldState extends State<AppTextField> {
       onFieldSubmitted: widget.onSubmitted,
       validator: widget.validator,
       inputFormatters: widget.inputFormatters,
+      cursorColor: effectiveFocus,
       style: TextStyle(
         color: widget.enabled ? effectiveText : colors.textDim,
         fontSize: fontSize,
