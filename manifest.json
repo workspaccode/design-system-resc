@@ -1,0 +1,10 @@
+{
+  "name": "Design System Showcase",
+  "short_name": "DS Showcase",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1B1B1F",
+  "theme_color": "#52bc49",
+  "description": "Flutter Design System Widget Showcase",
+  "icons": []
+}
