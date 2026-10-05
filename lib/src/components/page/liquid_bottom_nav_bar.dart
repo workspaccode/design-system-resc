@@ -277,6 +277,7 @@ class _IOSLiquidPainter extends CustomPainter {
   final double dragWavePositionMultiplier;
   final bool showBorder;
   final bool isVertical;
+  final TextDirection textDirection;
   final double centerYOffset;
   final LiquidColorMode colorMode;
   final List<Color>? customGradientColors;
@@ -323,6 +324,7 @@ class _IOSLiquidPainter extends CustomPainter {
     required this.dragWavePositionMultiplier,
     required this.showBorder,
     required this.isVertical,
+    required this.textDirection,
     this.centerYOffset = 0,
     required this.colorMode,
     this.customGradientColors,
@@ -343,7 +345,8 @@ class _IOSLiquidPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final pos = horizontalInset + (position * itemWidth) + (itemWidth / 2);
+    final posFromStart = horizontalInset + (position * itemWidth) + (itemWidth / 2);
+    final pos = textDirection == TextDirection.rtl ? size.width - posFromStart : posFromStart;
     final centerX = isVertical ? size.width / 2 : pos;
     final centerY = (isVertical ? pos : size.height / 2) - centerYOffset;
 
@@ -517,6 +520,7 @@ class _IOSLiquidPainter extends CustomPainter {
         oldDelegate.dragWavePositionMultiplier != dragWavePositionMultiplier ||
         oldDelegate.showBorder != showBorder ||
         oldDelegate.isVertical != isVertical ||
+        oldDelegate.textDirection != textDirection ||
         oldDelegate.colorMode != colorMode ||
         oldDelegate.customGradientColors != customGradientColors ||
         oldDelegate.borderColor != borderColor ||
@@ -825,6 +829,7 @@ class _LiquidBottomNavBarState extends State<LiquidBottomNavBar>
                                           _animatedDragWavePositionMultiplier,
                                       showBorder: widget.showBorder,
                                       isVertical: isVertical,
+                                      textDirection: Directionality.of(context),
                                       colorMode: widget.colorMode,
                                       customGradientColors:
                                           widget.customGradientColors,
