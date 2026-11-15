@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'liquid_nav_item.dart';
 import 'liquid_nav_style.dart';
@@ -1033,7 +1033,7 @@ class _LiquidBottomNavBarState extends State<LiquidBottomNavBar>
     required int index,
     required LiquidNavStyle style,
     required LiquidNavItem item,
-    final double? gapBetweenIconAndLabel = 2,
+    double? gapBetweenIconAndLabel = 2,
   }) {
     if (isVertical) {
       return Row(
@@ -1201,7 +1201,12 @@ class _LiquidBottomNavBarState extends State<LiquidBottomNavBar>
                   child: child,
                 ),
         itemCount: widget.items.length,
-        onReorder: onReorder,
+        // onReorderItem pre-adjusts newIndex for the removed item. Undo that
+        // so [LiquidBottomNavBar.onReorder] keeps its original raw-index
+        // contract and existing `if (oldIndex < newIndex) newIndex -= 1`
+        // handlers stay correct.
+        onReorderItem: (oldIndex, newIndex) =>
+            onReorder(oldIndex, newIndex > oldIndex ? newIndex + 1 : newIndex),
         onReorderStart: (_) => setState(() => _isReordering = true),
         onReorderEnd: (_) => setState(() => _isReordering = false),
         itemBuilder: itemBuilder,

@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A full-screen animated background that renders a sonar/pulse ring effect
 /// using pure Flutter animation APIs ([CustomPainter] + [AnimationController]).

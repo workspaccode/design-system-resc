@@ -17,6 +17,7 @@ dependencies:
   #   path: lib/core/flutter_fortress
   dio: ^5.4.0
 
+  material_ui: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

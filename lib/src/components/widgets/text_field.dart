@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -112,10 +112,10 @@ class AppTextField extends StatefulWidget {
     void Function(String)? onSubmitted,
     bool obscureText = false,
     FormFieldSetter<String>? onSaved,
-    final ScrollController? scrollController,
-    final ScrollPhysics? scrollPhysics,
-    final Color? colorContainer,
-    final List<BoxShadow>? boxShadow,
+    ScrollController? scrollController,
+    ScrollPhysics? scrollPhysics,
+    Color? colorContainer,
+    List<BoxShadow>? boxShadow,
   }) =>
       AppTextField(
         key: key,
@@ -433,7 +433,7 @@ class _AppTextFieldState extends State<AppTextField> {
       child: TextFormField(
         controller: widget.controller,
         initialValue: widget.initialValue,
-        scribbleEnabled: widget.scribbleEnabled,
+        stylusHandwritingEnabled: widget.scribbleEnabled,
         scrollController: widget.scrollController,
         scrollPhysics: widget.scrollPhysics,
         onSaved: widget.onSaved,

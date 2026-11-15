@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A button that morphs between two icon states (e.g. Play / Pause)
 /// with a smooth rotation and scale animation.

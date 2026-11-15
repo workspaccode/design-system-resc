@@ -5,7 +5,7 @@ import 'package:design_system_example/pages/liquid_mono_background_page.dart';
 import 'package:design_system_example/pages/loading_animation_page.dart';
 import 'package:design_system_example/pages/screen_background_animated_page.dart';
 import 'package:design_system_example/pages/thermometer_page.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_design_system/flutter_design_system.dart' as ds;
 
 import 'buttons_page.dart';

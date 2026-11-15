@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Design system button component
 class AppButton extends StatelessWidget {
@@ -95,7 +95,6 @@ class AppButton extends StatelessWidget {
           child: content,
         );
       case AppButtonVariant.custom:
-        final style = _getStyle(colors);
         if (customBuilder != null) {
           button = customBuilder!(content) ?? content;
         } else {

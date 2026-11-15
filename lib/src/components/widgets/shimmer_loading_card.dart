@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A skeleton loading card with a shimmering gradient animation.
 /// Use while content is loading to indicate progress.

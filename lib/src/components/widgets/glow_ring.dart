@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A pulsing glow ring that wraps any child widget.
 /// The ring scales and fades in/out continuously.

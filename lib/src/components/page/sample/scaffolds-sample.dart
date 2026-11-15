@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Page scaffold with a sliver app bar
 class AppSliverScaffold extends StatelessWidget {

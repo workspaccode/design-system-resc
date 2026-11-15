@@ -1,5 +1,5 @@
 import 'package:amicons/amicons.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_design_system/flutter_design_system.dart' as ds;
 
 class ScreenBackgroundAnimatedPage extends StatelessWidget {

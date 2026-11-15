@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A card that flips 180° on tap to reveal its back side.
 /// Works with any front/back widget pair.

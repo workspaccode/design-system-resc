@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A button that requires the user to swipe a thumb slider to
 /// confirm a destructive or important action.

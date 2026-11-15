@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// **Radius tokens.** Used everywhere a corner radius is needed.
 class AppRadii {

@@ -1,5 +1,5 @@
 import 'dart:ui' show ImageFilter;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Design system card component
 class AppCard extends StatelessWidget {

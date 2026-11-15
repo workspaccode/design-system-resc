@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../../generated/assets.dart';
 import '../../../theme/theme_extensions.dart';
@@ -229,11 +229,9 @@ class _PngLoadingFadeState extends State<PngLoadingFade>
 
   @override
   Widget build(BuildContext context) {
-    final colors = context.colors;
-
     final defaultDecoration = BoxDecoration(
       borderRadius: BorderRadius.circular(8),
-      //color: colors.surface,
+      //color: context.colors.surface,
     );
 
     return SizedBox(
